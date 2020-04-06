@@ -1,0 +1,32 @@
+{
+  "name": "common-front-tools",
+  "version": "0.1.0",
+  "description": "My collection of front related stuff I use in my projects",
+  "scripts": {
+    "storybook": "start-storybook -p 6006 --ci",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guirec/common-front-tools.git"
+  },
+  "author": "Guirec Lefort <guirec@lefort.family>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guirec/common-front-tools/issues"
+  },
+  "homepage": "https://github.com/Guirec/common-front-tools#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@storybook/addon-docs": "^5.3.18",
+    "@storybook/addon-viewport": "^5.3.18",
+    "@storybook/html": "^5.3.18",
+    "@storybook/preset-scss": "^1.0.2",
+    "@whitespace/storybook-addon-html": "^1.2.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.4.2",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3"
+  }
+}
