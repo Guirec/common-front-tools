@@ -16,7 +16,7 @@ export const color = {
 
 export const typography = {
   family: {
-    base: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+    base: 'system-ui',
   },
   size: {
     s1: '12',
