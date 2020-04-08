@@ -1,0 +1,33 @@
+<Meta title="Utilities/Spacers" />
+
+# Spacers
+
+If enabled, utility classes are generated according to the spacers values in the settings for margin and padding.
+
+| Value         | Name  |
+|:-------------:|:-----:|
+| 0 (0px)       | `n`   |
+| .8rem (8px)   | `xs`  |
+| 1.6rem (16px) | `sm`  |
+| 2.4rem (24px) | `md`  |
+| 3.2rem (32px) | `lg`  |
+| 4rem (40px)   | `xl`  |
+| 4.8rem (48px) | `2xl` |
+| 8rem (80px)   | `3xl` |
+
+| Property       | Class           |
+|----------------|-----------------|
+| Margin         | `u-m-{spacer}`  |
+| Margin top     | `u-mt-{spacer}` |
+| Margin right   | `u-mr-{spacer}` |
+| Margin bottom  | `u-mb-{spacer}` |
+| Margin left    | `u-ml-{spacer}` |
+| Padding        | `u-p-{spacer}`  |
+| Padding top    | `u-pt-{spacer}` |
+| Padding right  | `u-pr-{spacer}` |
+| Padding bottom | `u-pb-{spacer}` |
+| Padding left   | `u-pl-{spacer}` |
+
+Example : `u-mt-xs` -> `margin-top: .8rem;`
+
+I've also added a very specific spacing class, because it can be useful: `u-mrl-auto` which apply `margin-right: auto; margin-left: auto;`.

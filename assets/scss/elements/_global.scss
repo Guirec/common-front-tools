@@ -1,0 +1,97 @@
+//
+// Global
+// --------------------------------------------------------------------------
+
+
+// Page
+// --------------------------------------------------------------------------
+
+html {
+  height: 100%;
+  font-size: 62.5%; // IE9-IE11 math fixing
+  font-size: calc(1em * .625);
+}
+
+body {
+  position: relative;
+  color: color("black");
+  font-weight: font-weight("regular");
+  font-size: font-size("sm");
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+}
+
+
+// Focus state
+// --------------------------------------------------------------------------
+
+* {
+  &:focus {
+    outline: 1px dashed color("grey-light");
+    outline-offset: .15em;
+  }
+}
+
+
+// Selection
+// --------------------------------------------------------------------------
+
+::selection {
+  color: color("white");
+  background-color: color("primary");
+}
+
+
+// Texts
+// --------------------------------------------------------------------------
+
+blockquote {
+  p {
+    &:first-child {
+      &::before {
+        content: "« ";
+      }
+    }
+
+    &:last-child {
+      &::after {
+        content: " »";
+      }
+    }
+  }
+}
+
+cite {
+  font-size: .9em;
+}
+
+
+// links
+// --------------------------------------------------------------------------
+
+a {
+  color: color("primary");
+  text-decoration: none;
+  transition: color .2s ease-in-out;
+
+  @include hover {
+    text-decoration: underline;
+  }
+}
+
+
+// Images
+// --------------------------------------------------------------------------
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: top;
+  transition: fill .2s ease-in-out;
+  fill: currentColor;
+}

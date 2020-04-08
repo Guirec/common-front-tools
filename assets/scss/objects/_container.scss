@@ -1,0 +1,12 @@
+//
+// Container
+// --------------------------------------------------------------------------
+
+.o-container {
+  width: 100%;
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: spacer("sm");
+  padding-left: spacer("sm");
+}

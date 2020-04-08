@@ -1,0 +1,43 @@
+//
+// Page
+// --------------------------------------------------------------------------
+
+.o-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+
+  &.is-fixed {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+}
+
+@media (max-width: bp("md-max")) {
+  .o-page {
+    &.is-fixed {
+      max-height: 100%;
+    }
+  }
+}
+
+
+// Container
+// --------------------------------------------------------------------------
+
+.o-page__container {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+
+
+// Content
+// --------------------------------------------------------------------------
+
+.o-page__content {
+  flex: 1 1 auto;
+}

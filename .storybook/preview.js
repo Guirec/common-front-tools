@@ -19,3 +19,7 @@ addParameters({
     hideEmpty: true,
   },
 });
+
+// Import assets
+import '../assets/scss/common.scss';
+import '../assets/scss/utils.scss';

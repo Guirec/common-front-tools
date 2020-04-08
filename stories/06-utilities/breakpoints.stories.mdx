@@ -1,0 +1,15 @@
+<Meta title="Utilities/Breakpoints" />
+
+# Breakpoints
+
+Utility classes will not be very useful if it's not possible to update them according to the responsive breakpoints defined in the settings, so it's the case. If enabled, on every utility classes (with few exceptions) you can specify the desired breakpoint for it to be applied.
+
+To do this, add to the utility class the desired breakpoint identifier as a class suffix:
+
+| Media query                                         | Breakpoint identifier |
+|:---------------------------------------------------:|:---------------------:|
+| `@media (max-width:767px)`                          | `:sm`                 |
+| `@media (min-width:768px) and (max-width:1024px)`   | `:md`                 |
+| `@media (min-width:1025px)`                         | `:lg`                 |
+
+Example usage: `u-w-1/2 u-w-full:sm` -> width set to 50% but set to 100% for screens under 768px.

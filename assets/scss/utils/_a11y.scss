@@ -1,0 +1,9 @@
+//
+// A11y
+// --------------------------------------------------------------------------
+
+@if $enable-ay11-utilities {
+  .u-visually-hidden {
+    @extend %visually-hidden;
+  }
+}

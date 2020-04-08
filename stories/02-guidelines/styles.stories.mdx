@@ -1,0 +1,29 @@
+<Meta title="Guidelines/Styles" />
+
+# Styles coding guidelines
+
+Sass CSS extension languages remains my way to go even if vanilla CSS get a more and more viable option. In a non CSS-in-JS project, Sass provide many benifits to organise your code in a most readable way, avoid repetitions and useful tools.
+But its very important to use this extension with parsimony because it's power can deserve the benefits it can provide. So we want don't want to get to far form the vanilla way of writing styles for 2 main reasons:
+- Sass code will be compiled to produce just CSS, so you'll be able to maintain control of the final code that will be distributed to the client.
+- Maybe some day, possibly in the near future, you'll want to convert your Sass files in vanilla CSS or in an other extension and it will not be so much work.
+
+The cascade in CSS can be an ally or an enemy.. or both at the same time. Mastering the cascade will prove to be very important and to achieve that we will use the power of two main principles : **SEM & BIO**. I invite you to read more about it in [this exellent article](https://css-tricks.com/combining-the-powers-of-sem-and-bio-for-improving-css/).
+
+## Specifities
+
+All principles detailled in the linked article will be followed, but there is some update about **BEM** that I use:
+- I tried to avoid this, but if I have more than two level of depth, instead of `.x-block__element-child`, I will use a double underscore again: `.x-block__element__child`
+- I've view several way to do with BEM about modifier, I stick to the first I encounter: `.x-block--modifier`
+- Sometimes I use state classes, like `.is-open` for example, that speak for itself and can be added by some JavaScript and not related to any component in particular.
+
+## Recommendations
+
+About units for expressing length, I tried to avoid using `px` because it's no longer revelant in the variety of device a content can be viewed, but for more clarity I use `rem` with a little trick at first: I set the base value of `1rem` to an equivalent of `10px`, so the math is easy to translate a design with the units expressed in `px`.
+
+For colors, I tried to define them using HSL cylindrical-coordinate system because it's much more readable than RGB hex value that is commonly used. You can read a good article about this choice: [Why CSS HSL Colors are Better!](https://medium.com/@elad/why-css-hsl-colors-are-better-83b1e0b6eead).
+
+I also recommend to generate several CSS files if possible instead of one big file. So you can limit the amount unused css called for a specific page. In many case, you will be able to tell which component will be used in a specific page. This is one of the many advantages of thinking of an interface as a sum of components.
+
+## Standards
+
+I tried to constrain as possible the way to write styles, because I value consistancy a lot. For that I will tried to introduced various tools to apply those constraints.

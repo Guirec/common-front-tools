@@ -1,0 +1,466 @@
+//
+// Mixins
+// --------------------------------------------------------------------------
+
+
+// Font-face
+// --------------------------------------------------------------------------
+
+@mixin font-face($font-name, $font-local-1, $font-local-2, $font-path, $font-file, $font-weight: normal, $font-style: normal) {
+  font-weight: $font-weight;
+  font-family: $font-name;
+  font-style: $font-style;
+  font-display: "swap";
+  src: local($font-local-1), local($font-local-2),
+    url("../fonts/#{$font-path}/#{$font-file}.woff2") format("woff2"),
+    url("../fonts/#{$font-path}/#{$font-file}.woff") format("woff");
+}
+
+
+// Container
+// --------------------------------------------------------------------------
+
+@mixin container($max-size: $container-width, $padding: spacer("xs")) {
+  width: 100%;
+  max-width: $max-size;
+  margin-right: auto;
+  margin-left: auto;
+
+  @if ($padding != 0) {
+    padding-right: $padding;
+    padding-left: $padding;
+
+    @media (min-width: bp("lg-min")) {
+      padding-right: $padding * 2;
+      padding-left: $padding * 2;
+    }
+  }
+}
+
+
+// Define focus for all and hover from medium screens
+// Waiting for Media Queries Level 4: http://drafts.csswg.org/mediaqueries/#hover
+// --------------------------------------------------------------------------
+
+@mixin hover() {
+  &:focus {
+    @content;
+  }
+
+  @media (min-width: bp("lg-min")) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+
+// Aspect ratio
+// --------------------------------------------------------------------------
+
+@mixin aspect-ratio($width, $height, $embed) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+    content: "";
+  }
+
+  > #{$embed} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+// Object fit
+// --------------------------------------------------------------------------
+
+@mixin object-fit($width, $height) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+    content: "";
+  }
+
+  img {
+    position: absolute;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+    margin: auto;
+  }
+
+  @supports (object-fit: cover) {
+    &::before {
+      content: none;
+    }
+
+    img {
+      position: inherit;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+    }
+  }
+}
+
+
+// Colors utilities
+// --------------------------------------------------------------------------
+
+@mixin colors($modifier: null) {
+  @if $modifier {
+    $modifier: "\\:#{$modifier}";
+  }
+
+  @each $color-name, $color-value in $colors-global {
+    .u-color-#{$color-name}#{$modifier} {
+      color: $color-value;
+    }
+
+    .u-bg-#{$color-name}#{$modifier} {
+      background-color: $color-value;
+    }
+  }
+}
+
+
+// Texts utilities
+// --------------------------------------------------------------------------
+
+@mixin texts($modifier: null) {
+  @if $modifier {
+    $modifier: "\\:#{$modifier}";
+  }
+
+  @each $font-size-name, $font-size-value in $font-sizes {
+    .u-text-#{$font-size-name}#{$modifier} {
+      font-size: $font-size-value;
+    }
+  }
+
+  @each $font-weight-name, $font-weight-value in $font-weights {
+    .u-text-#{$font-weight-name}#{$modifier} {
+      font-weight: $font-weight-value;
+    }
+  }
+
+  .u-text-left#{$modifier} {
+    text-align: left;
+  }
+
+  .u-text-right#{$modifier} {
+    text-align: right;
+  }
+
+  .u-text-center#{$modifier} {
+    text-align: center;
+  }
+
+  .u-text-justify#{$modifier} {
+    text-align: justify;
+  }
+
+  .u-text-uppercase#{$modifier} {
+    text-transform: uppercase;
+  }
+
+  .u-text-transform-none#{$modifier} {
+    text-transform: none;
+  }
+}
+
+
+// Widths utilities
+// --------------------------------------------------------------------------
+
+@mixin widths($modifier: null) {
+  @if $modifier {
+    $modifier: "\\:#{$modifier}";
+  }
+
+  @each $width-name, $width-value in $widths {
+    .u-w-#{$width-name}#{$modifier} {
+      width: $width-value;
+    }
+  }
+}
+
+
+// Spacers utilities
+// --------------------------------------------------------------------------
+
+@mixin spacers($modifier: null) {
+  @if $modifier {
+    $modifier: "\\:#{$modifier}";
+  }
+
+  @each $spacer-name, $spacer-value in $spacers {
+    .u-m-#{$spacer-name}#{$modifier} {
+      margin: $spacer-value;
+    }
+
+    .u-mt-#{$spacer-name}#{$modifier} {
+      margin-top: $spacer-value;
+    }
+
+    .u-mr-#{$spacer-name}#{$modifier} {
+      margin-right: $spacer-value;
+    }
+
+    .u-mb-#{$spacer-name}#{$modifier} {
+      margin-bottom: $spacer-value;
+    }
+
+    .u-ml-#{$spacer-name}#{$modifier} {
+      margin-left: $spacer-value;
+    }
+
+    .u-p-#{$spacer-name}#{$modifier} {
+      padding: $spacer-value;
+    }
+
+    .u-pt-#{$spacer-name}#{$modifier} {
+      padding-top: $spacer-value;
+    }
+
+    .u-pr-#{$spacer-name}#{$modifier} {
+      padding-right: $spacer-value;
+    }
+
+    .u-pb-#{$spacer-name}#{$modifier} {
+      padding-bottom: $spacer-value;
+    }
+
+    .u-pl-#{$spacer-name}#{$modifier} {
+      padding-left: $spacer-value;
+    }
+  }
+
+  .u-mrl-auto#{$modifier} {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+
+// Display utilities
+// --------------------------------------------------------------------------
+
+@mixin display($modifier: null) {
+  @if $modifier {
+    $modifier: "\\:#{$modifier}";
+  }
+
+  .u-block#{$modifier} {
+    display: block;
+  }
+
+  .u-none#{$modifier} {
+    display: none;
+  }
+
+  .u-inline#{$modifier} {
+    display: inline;
+  }
+
+  .u-inline-block#{$modifier} {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .u-flex#{$modifier} {
+    display: flex;
+  }
+
+  .u-inline-flex#{$modifier} {
+    display: inline-flex;
+  }
+
+  .u-flex-wrap#{$modifier} {
+    flex-wrap: wrap;
+  }
+
+  .u-flex-wrap-reverse#{$modifier} {
+    flex-wrap: wrap-reverse;
+  }
+
+  .u-flex-nowrap#{$modifier} {
+    flex-wrap: nowrap;
+  }
+
+  .u-flex-row#{$modifier} {
+    flex-direction: row;
+  }
+
+  .u-flex-row-reverse#{$modifier} {
+    flex-direction: row-reverse;
+  }
+
+  .u-flex-column#{$modifier} {
+    flex-direction: column;
+  }
+
+  .u-flex-column-reverse#{$modifier} {
+    flex-direction: column-reverse;
+  }
+
+  .u-flex-main-start#{$modifier} {
+    justify-content: flex-start;
+  }
+
+  .u-flex-main-end#{$modifier} {
+    justify-content: flex-end;
+  }
+
+  .u-flex-main-center#{$modifier} {
+    justify-content: center;
+  }
+
+  .u-flex-main-between#{$modifier} {
+    justify-content: space-between;
+  }
+
+  .u-flex-main-around#{$modifier} {
+    justify-content: space-around;
+  }
+
+  .u-flex-cross-start#{$modifier} {
+    align-items: flex-start;
+  }
+
+  .u-flex-cross-end#{$modifier} {
+    align-items: flex-end;
+  }
+
+  .u-flex-cross-center#{$modifier} {
+    align-items: center;
+  }
+
+  .u-flex-cross-baseline#{$modifier} {
+    align-items: baseline;
+  }
+
+  .u-flex-cross-stretch#{$modifier} {
+    align-items: stretch;
+  }
+
+  .u-flex-self-start#{$modifier} {
+    align-self: flex-start;
+  }
+
+  .u-flex-self-end#{$modifier} {
+    align-self: flex-end;
+  }
+
+  .u-flex-self-center#{$modifier} {
+    align-self: center;
+  }
+
+  .u-flex-self-baseline#{$modifier} {
+    align-self: baseline;
+  }
+
+  .u-flex-self-stretch#{$modifier} {
+    align-self: stretch;
+  }
+
+  .u-flex-item-fluid#{$modifier} {
+    flex: 1;
+  }
+
+  .u-flex-item-auto#{$modifier} {
+    flex: auto;
+  }
+
+  .u-flex-item-initial#{$modifier} {
+    flex: initial;
+  }
+
+  .u-flex-item-none#{$modifier} {
+    flex: none;
+  }
+
+  .u-flex-item-first#{$modifier} {
+    order: -1;
+  }
+
+  .u-flex-item-medium#{$modifier} {
+    order: 0;
+  }
+
+  .u-flex-item-last#{$modifier} {
+    order: 1;
+  }
+}
+
+
+// Responsive component generator
+// --------------------------------------------------------------------------
+
+@mixin components($component, $bp-name) {
+  @if $component == "colors" {
+    @include colors($bp-name);
+  }
+
+  @if $component == "texts" {
+    @include texts($bp-name);
+  }
+
+  @if $component == "widths" {
+    @include widths($bp-name);
+  }
+
+  @if $component == "spacers" {
+    @include spacers($bp-name);
+  }
+
+  @if $component == "display" {
+    @include display($bp-name);
+  }
+}
+
+@mixin responsive($component) {
+  $bp-name-prev: "sm";
+  $bp-value-prev: null;
+
+  @each $bp-name, $bp-value in $breakpoints {
+    @if index($breakpoints, ($bp-name $bp-value)) == 1 {
+      @media (max-width: $bp-value - 1px) {
+        @include components($component, "#{$bp-name-prev}");
+      }
+    }
+
+    @if index($breakpoints, ($bp-name $bp-value)) != 1 {
+      @media (min-width: $bp-value-prev) and (max-width: $bp-value - 1px) {
+        @include components($component, $bp-name-prev);
+      }
+    }
+
+    @if index($breakpoints, ($bp-name $bp-value)) == length($breakpoints) {
+      @media (min-width: $bp-value) {
+        @include components($component, "#{$bp-name}");
+      }
+    }
+
+    $bp-name-prev: $bp-name;
+    $bp-value-prev: $bp-value;
+  }
+}

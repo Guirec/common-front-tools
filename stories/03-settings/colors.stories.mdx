@@ -1,0 +1,22 @@
+import { ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import { color } from '../00-shared/styles';
+
+<Meta title="Settings/Colors" />
+
+# Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Monochrome"
+    colors={[
+      color.darkest,
+      color.dark,
+      color.medium,
+      color.light,
+      color.lightest,
+    ]}
+  />
+  <ColorItem title="Primary" subtitle="Base" colors={[color.primary.base]} />
+  <ColorItem title="Primary" subtitle="Dark" colors={[color.primary.dark]} />
+  <ColorItem title="Primary" subtitle="Light" colors={[color.primary.light]} />
+</ColorPalette>
