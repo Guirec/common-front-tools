@@ -1,0 +1,58 @@
+//
+// Alert
+// --------------------------------------------------------------------------
+
+.c-alert {
+  --alert-color-text        : #{color("white")};
+  --alert-color-background  : #{color("black")};
+  --alert-color-border      : var(--alert-color-background);
+  --alert-border-radius     : 4px;
+
+  margin: spacer("sm") 0;
+  padding: spacer("sm");
+  color: var(--alert-color-text);
+  background: var(--alert-color-background);
+  border: 1px solid var(--alert-color-border);
+  border-radius: var(--alert-border-radius);
+
+  ul {
+    @extend %list-unstyled;
+  }
+
+  li,
+  p {
+    margin: 0 0 spacer("xs");
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  a {
+    font-weight: font-weight("bold");
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+
+// Alternate styles
+// --------------------------------------------------------------------------
+
+.c-alert--info {
+  --alert-color-background  : hsl(219, 100%, 65%);
+}
+
+.c-alert--success {
+  --alert-color-background  : hsl(116, 54%, 42%);
+}
+
+.c-alert--warning {
+  --alert-color-background  : hsl(34, 100%, 50%);
+}
+
+.c-alert--error {
+  --alert-color-background  : hsl(7, 70%, 50%);
+}
