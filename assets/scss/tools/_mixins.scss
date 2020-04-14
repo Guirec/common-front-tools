@@ -2,25 +2,31 @@
 // Mixins
 // --------------------------------------------------------------------------
 
-
 // Font-face
 // --------------------------------------------------------------------------
 
-@mixin font-face($font-name, $font-local-1, $font-local-2, $font-path, $font-file, $font-weight: normal, $font-style: normal) {
+@mixin font-face(
+  $font-name,
+  $font-local-1,
+  $font-local-2,
+  $font-path,
+  $font-file,
+  $font-weight: normal,
+  $font-style: normal
+) {
   font-weight: $font-weight;
   font-family: $font-name;
   font-style: $font-style;
-  font-display: "swap";
+  font-display: 'swap';
   src: local($font-local-1), local($font-local-2),
-    url("../fonts/#{$font-path}/#{$font-file}.woff2") format("woff2"),
-    url("../fonts/#{$font-path}/#{$font-file}.woff") format("woff");
+    url('../fonts/#{$font-path}/#{$font-file}.woff2') format('woff2'),
+    url('../fonts/#{$font-path}/#{$font-file}.woff') format('woff');
 }
-
 
 // Container
 // --------------------------------------------------------------------------
 
-@mixin container($max-size: $container-width, $padding: spacer("xs")) {
+@mixin container($max-size: $container-width, $padding: spacer('xs')) {
   width: 100%;
   max-width: $max-size;
   margin-right: auto;
@@ -30,13 +36,12 @@
     padding-right: $padding;
     padding-left: $padding;
 
-    @media (min-width: bp("lg-min")) {
+    @media (min-width: bp('lg-min')) {
       padding-right: $padding * 2;
       padding-left: $padding * 2;
     }
   }
 }
-
 
 // Define focus for all and hover from medium screens
 // Waiting for Media Queries Level 4: http://drafts.csswg.org/mediaqueries/#hover
@@ -47,13 +52,12 @@
     @content;
   }
 
-  @media (min-width: bp("lg-min")) {
+  @media (min-width: bp('lg-min')) {
     &:hover {
       @content;
     }
   }
 }
-
 
 // Aspect ratio
 // --------------------------------------------------------------------------
@@ -66,7 +70,7 @@
     display: block;
     width: 100%;
     padding-top: ($height / $width) * 100%;
-    content: "";
+    content: '';
   }
 
   > #{$embed} {
@@ -77,7 +81,6 @@
     height: 100%;
   }
 }
-
 
 // Object fit
 // --------------------------------------------------------------------------
@@ -90,7 +93,7 @@
     display: block;
     width: 100%;
     padding-top: ($height / $width) * 100%;
-    content: "";
+    content: '';
   }
 
   img {
@@ -121,13 +124,12 @@
   }
 }
 
-
 // Colors utilities
 // --------------------------------------------------------------------------
 
 @mixin colors($modifier: null) {
   @if $modifier {
-    $modifier: "\\:#{$modifier}";
+    $modifier: '\\:#{$modifier}';
   }
 
   @each $color-name, $color-value in $colors-global {
@@ -141,13 +143,12 @@
   }
 }
 
-
 // Texts utilities
 // --------------------------------------------------------------------------
 
 @mixin texts($modifier: null) {
   @if $modifier {
-    $modifier: "\\:#{$modifier}";
+    $modifier: '\\:#{$modifier}';
   }
 
   @each $font-size-name, $font-size-value in $font-sizes {
@@ -187,13 +188,12 @@
   }
 }
 
-
 // Widths utilities
 // --------------------------------------------------------------------------
 
 @mixin widths($modifier: null) {
   @if $modifier {
-    $modifier: "\\:#{$modifier}";
+    $modifier: '\\:#{$modifier}';
   }
 
   @each $width-name, $width-value in $widths {
@@ -203,13 +203,12 @@
   }
 }
 
-
 // Spacers utilities
 // --------------------------------------------------------------------------
 
 @mixin spacers($modifier: null) {
   @if $modifier {
-    $modifier: "\\:#{$modifier}";
+    $modifier: '\\:#{$modifier}';
   }
 
   @each $spacer-name, $spacer-value in $spacers {
@@ -260,13 +259,12 @@
   }
 }
 
-
 // Display utilities
 // --------------------------------------------------------------------------
 
 @mixin display($modifier: null) {
   @if $modifier {
-    $modifier: "\\:#{$modifier}";
+    $modifier: '\\:#{$modifier}';
   }
 
   .u-block#{$modifier} {
@@ -411,40 +409,39 @@
   }
 }
 
-
 // Responsive component generator
 // --------------------------------------------------------------------------
 
 @mixin components($component, $bp-name) {
-  @if $component == "colors" {
+  @if $component == 'colors' {
     @include colors($bp-name);
   }
 
-  @if $component == "texts" {
+  @if $component == 'texts' {
     @include texts($bp-name);
   }
 
-  @if $component == "widths" {
+  @if $component == 'widths' {
     @include widths($bp-name);
   }
 
-  @if $component == "spacers" {
+  @if $component == 'spacers' {
     @include spacers($bp-name);
   }
 
-  @if $component == "display" {
+  @if $component == 'display' {
     @include display($bp-name);
   }
 }
 
 @mixin responsive($component) {
-  $bp-name-prev: "sm";
+  $bp-name-prev: 'sm';
   $bp-value-prev: null;
 
   @each $bp-name, $bp-value in $breakpoints {
     @if index($breakpoints, ($bp-name $bp-value)) == 1 {
       @media (max-width: $bp-value - 1px) {
-        @include components($component, "#{$bp-name-prev}");
+        @include components($component, '#{$bp-name-prev}');
       }
     }
 
@@ -456,7 +453,7 @@
 
     @if index($breakpoints, ($bp-name $bp-value)) == length($breakpoints) {
       @media (min-width: $bp-value) {
-        @include components($component, "#{$bp-name}");
+        @include components($component, '#{$bp-name}');
       }
     }
 

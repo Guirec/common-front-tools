@@ -6,4 +6,4 @@ module.exports = {
     '@storybook/addon-viewport/register',
     '@whitespace/storybook-addon-html/html',
   ],
-};
+}

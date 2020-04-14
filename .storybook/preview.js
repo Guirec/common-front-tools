@@ -1,5 +1,5 @@
-import { addDecorator, addParameters } from '@storybook/html';
-import { withHTML } from '@whitespace/storybook-addon-html/html';
+import { addDecorator, addParameters } from '@storybook/html'
+import { withHTML } from '@whitespace/storybook-addon-html/html'
 
 addDecorator(
   withHTML({
@@ -8,8 +8,8 @@ addDecorator(
       useTabs: false,
       htmlWhitespaceSensitivity: 'css',
     },
-  }),
-);
+  })
+)
 
 addParameters({
   options: {
@@ -18,9 +18,9 @@ addParameters({
   dependencies: {
     hideEmpty: true,
   },
-});
+})
 
 // Import assets
-import '../assets/scss/common.scss';
-import '../assets/scss/components.scss';
-import '../assets/scss/utils.scss';
+import '../assets/scss/common.scss'
+import '../assets/scss/components.scss'
+import '../assets/scss/utils.scss'

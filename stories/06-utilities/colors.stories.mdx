@@ -1,5 +1,5 @@
-import { ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
-import { color } from '../00-shared/styles';
+import { ColorPalette, ColorItem } from '@storybook/addon-docs/blocks'
+import { color } from '../00-shared/styles'
 
 <Meta title="Utilities/Colors" />
 
@@ -9,11 +9,31 @@ If enabled, utility classes are generated according to the colors values in the 
 
 <ColorPalette>
   <ColorItem title="Black" subtitle="u-color-black" colors={[color.darkest]} />
-  <ColorItem title="Gray dark" subtitle="u-color-gray-dark" colors={[color.dark]} />
+  <ColorItem
+    title="Gray dark"
+    subtitle="u-color-gray-dark"
+    colors={[color.dark]}
+  />
   <ColorItem title="Gray" subtitle="u-color-gray" colors={[color.medium]} />
-  <ColorItem title="Gray light" subtitle="u-color-gray-light" colors={[color.light]} />
+  <ColorItem
+    title="Gray light"
+    subtitle="u-color-gray-light"
+    colors={[color.light]}
+  />
   <ColorItem title="White" subtitle="u-color-white" colors={[color.lightest]} />
-  <ColorItem title="Primary" subtitle="u-color-primary" colors={[color.primary.base]} />
-  <ColorItem title="Primary dark" subtitle="u-color-primary-dark" colors={[color.primary.dark]} />
-  <ColorItem title="Primary light" subtitle="u-color-primary-light" colors={[color.primary.light]} />
+  <ColorItem
+    title="Primary"
+    subtitle="u-color-primary"
+    colors={[color.primary.base]}
+  />
+  <ColorItem
+    title="Primary dark"
+    subtitle="u-color-primary-dark"
+    colors={[color.primary.dark]}
+  />
+  <ColorItem
+    title="Primary light"
+    subtitle="u-color-primary-light"
+    colors={[color.primary.light]}
+  />
 </ColorPalette>

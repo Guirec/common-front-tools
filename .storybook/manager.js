@@ -1,1 +1,1 @@
-import '@whitespace/storybook-addon-html/register';
+import '@whitespace/storybook-addon-html/register'

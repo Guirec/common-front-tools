@@ -3,42 +3,39 @@
 // --------------------------------------------------------------------------
 
 :root {
-  --color-global-white         : hsl(0, 0%, 100%);
-  --color-global-gray-light    : hsl(0, 0%, 80%);
-  --color-global-gray          : hsl(0, 0%, 60%);
-  --color-global-gray-dark     : hsl(0, 0%, 20%);
-  --color-global-black         : hsl(0, 0%, 0%);
+  --color-global-white: hsl(0, 0%, 100%);
+  --color-global-gray-light: hsl(0, 0%, 80%);
+  --color-global-gray: hsl(0, 0%, 60%);
+  --color-global-gray-dark: hsl(0, 0%, 20%);
+  --color-global-black: hsl(0, 0%, 0%);
 
-  --color-global-primary       : hsl(210, 100%, 65%);
-  --color-global-primary-light : hsl(210, 100%, 70%);
-  --color-global-primary-dark  : hsl(210, 100%, 60%);
+  --color-global-primary: hsl(210, 100%, 65%);
+  --color-global-primary-light: hsl(210, 100%, 70%);
+  --color-global-primary-dark: hsl(210, 100%, 60%);
 }
-
 
 // Global
 // --------------------------------------------------------------------------
 
 $colors-global: (
-  "white"                      : var(--color-global-white),
-  "grey-light"                 : var(--color-global-gray-light),
-  "grey"                       : var(--color-global-gray),
-  "grey-dark"                  : var(--color-global-gray-dark),
-  "black"                      : var(--color-global-black),
-
-  "primary"                    : var(--color-global-primary),
-  "primary-light"              : var(--color-global-primary-light),
-  "primary-dark"               : var(--color-global-primary-dark),
+  'white': var(--color-global-white),
+  'gray-light': var(--color-global-gray-light),
+  'gray': var(--color-global-gray),
+  'gray-dark': var(--color-global-gray-dark),
+  'black': var(--color-global-black),
+  'primary': var(--color-global-primary),
+  'primary-light': var(--color-global-primary-light),
+  'primary-dark': var(--color-global-primary-dark),
 );
-
 
 // Networks
 // --------------------------------------------------------------------------
 
 $colors-network: (
-  "facebook"                   : #3b5998,
-  "instagram"                  : #517fa4,
-  "linkedin"                   : #007bb6,
-  "pinterest"                  : #cb2027,
-  "twitter"                    : #00aced,
-  "youtube"                    : #cc181e,
+  'facebook': #3b5998,
+  'instagram': #517fa4,
+  'linkedin': #007bb6,
+  'pinterest': #cb2027,
+  'twitter': #00aced,
+  'youtube': #cc181e,
 );

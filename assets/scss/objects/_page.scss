@@ -16,14 +16,13 @@
   }
 }
 
-@media (max-width: bp("md-max")) {
+@media (max-width: bp('md-max')) {
   .o-page {
     &.is-fixed {
       max-height: 100%;
     }
   }
 }
-
 
 // Container
 // --------------------------------------------------------------------------
@@ -33,7 +32,6 @@
   flex: 1 0 auto;
   flex-direction: column;
 }
-
 
 // Content
 // --------------------------------------------------------------------------

@@ -2,8 +2,7 @@
 // Functions
 // --------------------------------------------------------------------------
 
-
-// spacer
+// Spacer
 // --------------------------------------------------------------------------
 
 @function spacer($spacer) {
@@ -13,7 +12,6 @@
 
   @warn "Unfortunately, no value could be retrieved from #{$spacers}";
 }
-
 
 // Color
 // --------------------------------------------------------------------------
@@ -29,7 +27,6 @@ $colors-variants: map-merge($colors-global, $colors-network);
   @warn "Unfortunately, no value could be retrieved from #{$colors-variants}";
 }
 
-
 // Font size
 // --------------------------------------------------------------------------
 
@@ -40,7 +37,6 @@ $colors-variants: map-merge($colors-global, $colors-network);
 
   @warn "Unfortunately, no value could be retrieved from #{$font-sizes}";
 }
-
 
 // Font weight
 // --------------------------------------------------------------------------
@@ -53,7 +49,6 @@ $colors-variants: map-merge($colors-global, $colors-network);
   @warn "Unfortunately, no value could be retrieved from #{$font-weights}";
 }
 
-
 // Breakpoints
 // --------------------------------------------------------------------------
 
@@ -62,8 +57,20 @@ $bp-max: ();
 $bp-all: ();
 
 @each $bp-name, $bp-value in $breakpoints {
-  $bp-min: map-merge($bp-min, ("#{$bp-name}-min": $bp-value));
-  $bp-max: map-merge($bp-max, ("#{$bp-name}-max": $bp-value - 1px));
+  $bp-min: map-merge(
+    $bp-min,
+    (
+      '#{$bp-name}-min': $bp-value,
+    )
+  );
+  $bp-max: map-merge(
+    $bp-max,
+    (
+      '#{$bp-name}-max': (
+        $bp-value - 1px,
+      ),
+    )
+  );
 }
 
 $bp-all: map-merge($bp-min, $bp-max);

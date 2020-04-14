@@ -12,7 +12,7 @@ export const color = {
     light: 'hsl(210, 100%, 70%)',
     dark: 'hsl(210, 100%, 60%)',
   },
-};
+}
 
 export const typography = {
   family: {
@@ -31,4 +31,4 @@ export const typography = {
     l3: '30',
     l4: '32',
   },
-};
+}

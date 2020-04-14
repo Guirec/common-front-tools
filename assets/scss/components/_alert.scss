@@ -3,13 +3,13 @@
 // --------------------------------------------------------------------------
 
 .c-alert {
-  --alert-color-text        : #{color("white")};
-  --alert-color-background  : #{color("black")};
-  --alert-color-border      : var(--alert-color-background);
   --alert-border-radius     : 4px;
+  --alert-color-text: #{color('white')};
+  --alert-color-background: #{color('black')};
+  --alert-color-border: var(--alert-color-background);
 
-  margin: spacer("sm") 0;
-  padding: spacer("sm");
+  margin: spacer('sm') 0;
+  padding: spacer('sm');
   color: var(--alert-color-text);
   background: var(--alert-color-background);
   border: 1px solid var(--alert-color-border);
@@ -21,7 +21,7 @@
 
   li,
   p {
-    margin: 0 0 spacer("xs");
+    margin: 0 0 spacer('xs');
 
     &:last-child {
       margin: 0;
@@ -29,7 +29,7 @@
   }
 
   a {
-    font-weight: font-weight("bold");
+    font-weight: font-weight('bold');
   }
 
   &.hidden {
@@ -37,22 +37,21 @@
   }
 }
 
-
 // Alternate styles
 // --------------------------------------------------------------------------
 
 .c-alert--info {
-  --alert-color-background  : hsl(219, 100%, 65%);
+  --alert-color-background: hsl(219, 100%, 65%);
 }
 
 .c-alert--success {
-  --alert-color-background  : hsl(116, 54%, 42%);
+  --alert-color-background: hsl(116, 54%, 42%);
 }
 
 .c-alert--warning {
-  --alert-color-background  : hsl(34, 100%, 50%);
+  --alert-color-background: hsl(34, 100%, 50%);
 }
 
 .c-alert--error {
-  --alert-color-background  : hsl(7, 70%, 50%);
+  --alert-color-background: hsl(7, 70%, 50%);
 }

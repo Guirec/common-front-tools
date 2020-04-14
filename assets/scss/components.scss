@@ -2,29 +2,26 @@
 // Components
 // --------------------------------------------------------------------------
 
-@charset "UTF-8";
-
+@charset 'UTF-8';
 
 // Settings
 // --------------------------------------------------------------------------
 
-@import "settings/breakpoints";
-@import "settings/colors";
-@import "settings/spacers";
-@import "settings/typography";
-@import "settings/utilities";
-@import "settings/widths";
-
+@import 'settings/breakpoints';
+@import 'settings/colors';
+@import 'settings/spacers';
+@import 'settings/typography';
+@import 'settings/utilities';
+@import 'settings/widths';
 
 // Tools
 // --------------------------------------------------------------------------
 
-@import "tools/functions";
-@import "tools/mixins";
-@import "tools/placeholders";
-
+@import 'tools/functions';
+@import 'tools/mixins';
+@import 'tools/placeholders';
 
 // Components
 // --------------------------------------------------------------------------
 
-@import "components/alert";
+@import 'components/alert';
