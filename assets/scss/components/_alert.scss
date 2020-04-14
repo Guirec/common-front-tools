@@ -3,7 +3,6 @@
 // --------------------------------------------------------------------------
 
 .c-alert {
-  --alert-border-radius     : 4px;
   --alert-color-text: #{color('white')};
   --alert-color-background: #{color('black')};
   --alert-color-border: var(--alert-color-background);
@@ -13,7 +12,7 @@
   color: var(--alert-color-text);
   background: var(--alert-color-background);
   border: 1px solid var(--alert-color-border);
-  border-radius: var(--alert-border-radius);
+  border-radius: $border-radius;
 
   ul {
     @extend %list-unstyled;
