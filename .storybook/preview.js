@@ -21,6 +21,11 @@ addParameters({
 })
 
 // Import assets
+
+// scss
 import '../assets/scss/common.scss'
 import '../assets/scss/components.scss'
 import '../assets/scss/utils.scss'
+
+// js
+import '../assets/js/common.js'
