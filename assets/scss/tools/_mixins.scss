@@ -135,15 +135,21 @@
     $modifier: '\\:#{$modifier}';
   }
 
+  @each $font-weight-name, $font-weight-value in $font-weights {
+    .u-text-#{$font-weight-name}#{$modifier} {
+      font-weight: $font-weight-value;
+    }
+  }
+
   @each $font-size-name, $font-size-value in $font-sizes {
     .u-text-#{$font-size-name}#{$modifier} {
       font-size: $font-size-value;
     }
   }
 
-  @each $font-weight-name, $font-weight-value in $font-weights {
-    .u-text-#{$font-weight-name}#{$modifier} {
-      font-weight: $font-weight-value;
+  @each $line-height-name, $line-height-value in $line-heights {
+    .u-text-#{$line-height-name}#{$modifier} {
+      line-height: $line-height-value;
     }
   }
 

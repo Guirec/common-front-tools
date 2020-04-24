@@ -17,7 +17,7 @@ body {
   font-weight: font-weight('regular');
   font-size: font-size('sm');
   font-family: $font-family-base;
-  line-height: $line-height-base;
+  line-height: line-height('spaced');
 }
 
 // Focus state

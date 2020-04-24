@@ -10,7 +10,7 @@
     @return map-get($spacers, $spacer);
   }
 
-  @warn "Unfortunately, no value could be retrieved from #{$spacers}";
+  @warn 'Unfortunately, no value could be retrieved from #{$spacers}';
 }
 
 // Color
@@ -24,18 +24,7 @@ $colors-variants: map-merge($colors-global, $colors-network);
     @return map-get($colors-variants, $color);
   }
 
-  @warn "Unfortunately, no value could be retrieved from #{$colors-variants}";
-}
-
-// Font size
-// --------------------------------------------------------------------------
-
-@function font-size($font-size) {
-  @if map-has-key($font-sizes, $font-size) {
-    @return map-get($font-sizes, $font-size);
-  }
-
-  @warn "Unfortunately, no value could be retrieved from #{$font-sizes}";
+  @warn 'Unfortunately, no value could be retrieved from #{$colors-variants}';
 }
 
 // Font weight
@@ -46,7 +35,29 @@ $colors-variants: map-merge($colors-global, $colors-network);
     @return map-get($font-weights, $font-weight);
   }
 
-  @warn "Unfortunately, no value could be retrieved from #{$font-weights}";
+  @warn 'Unfortunately, no value could be retrieved from #{$font-weights}';
+}
+
+// Font size
+// --------------------------------------------------------------------------
+
+@function font-size($font-size) {
+  @if map-has-key($font-sizes, $font-size) {
+    @return map-get($font-sizes, $font-size);
+  }
+
+  @warn 'Unfortunately, no value could be retrieved from #{$font-sizes}';
+}
+
+// Line height
+// --------------------------------------------------------------------------
+
+@function line-height($line-height) {
+  @if map-has-key($line-heights, $line-height) {
+    @return map-get($line-heights, $line-height);
+  }
+
+  @warn 'Unfortunately, no value could be retrieved from #{$line-heights}';
 }
 
 // Breakpoints
@@ -80,5 +91,5 @@ $bp-all: map-merge($bp-min, $bp-max);
     @return map-get($bp-all, $breakpoint);
   }
 
-  @warn "Unfortunately, no value could be retrieved from #{$bp-all}";
+  @warn 'Unfortunately, no value could be retrieved from #{$bp-all}';
 }
