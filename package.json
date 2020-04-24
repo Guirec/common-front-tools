@@ -5,7 +5,10 @@
   "scripts": {
     "storybook": "start-storybook -p 6006 --ci --quiet",
     "build-storybook": "build-storybook --quiet",
-    "stylelint-check": "stylelint-config-prettier-check"
+    "eslint": "eslint '**/*.js'",
+    "stylelint": "stylelint '**/*.{css,scss}'",
+    "stylelint-prettier-check": "stylelint-config-prettier-check",
+    "format": "prettier --write '**/*.{html,js,json,md,mdx,scss}'"
   },
   "repository": {
     "type": "git",
