@@ -6,6 +6,6 @@
   @include widths;
 
   @if $enable-responsive-widths {
-    @include responsive("widths");
+    @include responsive('widths');
   }
 }
