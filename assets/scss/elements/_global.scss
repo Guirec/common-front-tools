@@ -89,3 +89,22 @@ svg {
   transition: fill 0.2s ease-in-out;
   fill: currentColor;
 }
+
+// Animations
+// --------------------------------------------------------------------------
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
