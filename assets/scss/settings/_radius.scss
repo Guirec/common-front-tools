@@ -2,8 +2,10 @@
 // Radius
 // --------------------------------------------------------------------------
 
-:root {
-  --border-radius: 0;
+@if $enable-root {
+  :root {
+    --border-radius: 0;
+  }
 }
 
 $border-radius: var(--border-radius);
