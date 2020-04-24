@@ -65,13 +65,13 @@ cite {
 // --------------------------------------------------------------------------
 
 a {
-  color: color('primary');
-  text-decoration: none;
+  color: currentColor;
+  text-decoration: underline;
   transition: color 0.2s ease-in-out;
 
   &:focus,
   &:hover {
-    text-decoration: underline;
+    color: color('primary');
   }
 }
 
