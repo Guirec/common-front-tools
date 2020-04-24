@@ -43,22 +43,6 @@
   }
 }
 
-// Define focus for all and hover from medium screens
-// Waiting for Media Queries Level 4: http://drafts.csswg.org/mediaqueries/#hover
-// --------------------------------------------------------------------------
-
-@mixin hover() {
-  &:focus {
-    @content;
-  }
-
-  @media (min-width: bp('lg-min')) {
-    &:hover {
-      @content;
-    }
-  }
-}
-
 // Aspect ratio
 // --------------------------------------------------------------------------
 

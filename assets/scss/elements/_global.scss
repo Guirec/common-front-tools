@@ -69,7 +69,8 @@ a {
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 
-  @include hover {
+  &:focus,
+  &:hover {
     text-decoration: underline;
   }
 }
