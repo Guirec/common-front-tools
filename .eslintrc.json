@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "eslint:recommended", // Good standard base of rules to use by default
+    "prettier" // The prettier shareable configs need to come last
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-var": "error", // Preference for let and const only
+    "prefer-const": "error",
+    "eqeqeq": "warn" // Warn to use === instead of ==
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020, // Use the latest version ESLint understands
+    "sourceType": "module" // We're using import/export, etc
+  },
+  "env": {
+    "es6": true, // Since we're using ES6+ features
+    "browser": true,
+    "node": true
+  }
+}
