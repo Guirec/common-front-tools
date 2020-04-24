@@ -173,8 +173,12 @@
     text-transform: uppercase;
   }
 
-  .u-text-transform-none#{$modifier} {
-    text-transform: none;
+  .u-text-line-through#{$modifier} {
+    text-decoration: line-through;
+  }
+
+  .u-text-nowrap#{$modifier} {
+    white-space: nowrap;
   }
 }
 
