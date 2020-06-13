@@ -1,0 +1,105 @@
+//
+// Button
+// --------------------------------------------------------------------------
+
+.c-button {
+  --button-min-height: 4.8rem;
+  --button-padding-top-bottom: #{spacer('xs')};
+  --button-padding-right-left: #{spacer('xl')};
+  --button-color: #{color('white')};
+  --button-font-weight: #{font-weight('semibold')};
+  --button-font-size: #{font-size('sm')};
+  --button-background-color: #{color('black')};
+  --button-border-color: var(--button-background-color);
+  --button-border-radius: $border-radius;
+
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--button-min-height);
+  padding: var(--button-padding-top-bottom) var(--button-padding-right-left);
+  overflow: hidden;
+  color: var(--button-color) !important;
+  font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size);
+  font-family: $font-family-base;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: baseline;
+  background: var(--button-background-color);
+  border: 1px solid var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out, transform 0.3s;
+
+  &[disabled] {
+    color: color('white');
+    background-color: color('gray-light');
+    border-color: color('gray-light');
+    cursor: not-allowed;
+  }
+
+  &.is-loading {
+    color: transparent;
+    pointer-events: none;
+
+    &::after {
+      position: absolute;
+      top: calc(50% - calc(2.8rem / 2));
+      left: calc(50% - calc(2.8rem / 2));
+      z-index: 10;
+      width: 2.8rem;
+      height: 2.8rem;
+      border: 4px solid hsla(0, 0%, 100%, 0.5);
+      border-top-color: hsla(0, 0%, 100%, 1);
+      border-radius: 50%;
+      animation: spin 1s ease-in-out infinite;
+      content: '';
+    }
+  }
+
+  &:focus,
+  &:hover {
+    --button-background-color: #{color('gray-dark')};
+
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+// Reversed variant
+// --------------------------------------------------------------------------
+
+.c-button--reversed {
+  --button-color: #{color('black')};
+  --button-background-color: #{color('white')};
+  --button-border-color: #{color('black')};
+
+  &:focus,
+  &:hover {
+    --button-color: #{color('white')};
+  }
+}
+
+// Primary variant
+// --------------------------------------------------------------------------
+
+.c-button--primary {
+  --button-background-color: #{color('primary')};
+
+  &:focus,
+  &:hover {
+    --button-background-color: #{color('primary-light')};
+  }
+
+  &:active {
+    --button-border-color: #{color('primary-dark')};
+  }
+}
