@@ -29,7 +29,7 @@
     "@whitespace/storybook-addon-html": "^1.2.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^9.0.0",
     "prettier": "2.0.4",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
