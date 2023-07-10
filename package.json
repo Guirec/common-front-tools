@@ -24,7 +24,7 @@
     "@babel/core": "^7.9.0",
     "@storybook/addon-docs": "^5.3.18",
     "@storybook/addon-viewport": "^5.3.18",
-    "@storybook/html": "^5.3.18",
+    "@storybook/html": "^7.0.26",
     "@storybook/preset-scss": "^1.0.2",
     "@whitespace/storybook-addon-html": "^1.2.1",
     "babel-loader": "^8.1.0",
